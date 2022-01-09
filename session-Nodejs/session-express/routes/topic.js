@@ -1,4 +1,4 @@
-var express = require('express')
+var express = require('express');
 var router = express.Router();
 var path = require('path');
 var fs = require('fs');
@@ -112,9 +112,9 @@ router.get('/:pageId', function(request, response, next) {
         var list = template.list(request.list);
         var html = template.HTML(sanitizedTitle, list,
           `<h2>${sanitizedTitle}</h2>${sanitizedDescription}`,
-          ` <a href="/create">create</a>
-            <a href="/update/${sanitizedTitle}">update</a>
-            <form action="/delete_process" method="post">
+          ` <a href="/topic/create">create</a>
+            <a href="/topic/update/${sanitizedTitle}">update</a>
+            <form action="/topic/delete_process" method="post">
               <input type="hidden" name="id" value="${sanitizedTitle}">
               <input type="submit" value="delete">
             </form>`,
